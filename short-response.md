@@ -49,6 +49,6 @@ A fellow student is building an Express server. They send a `PATCH` request to `
 
 **Your Answer:**
 
-	1.	The route definition — Make sure the server actually has a PATCH route defined for /api/bookmarks/:id. If the route doesn’t exist or is typed incorrectly (e.g. /api/bookmark/:id without the “s”), Express won’t match it and will return a 404.
-	2.	The router mounting path — If a separate router file handles bookmark routes, check that it’s mounted correctly in the main server file (e.g. app.use("/api/bookmarks", bookmarkRouter)). A mismatch between the mount path and the route definition would cause Express to never find the route.
-	3.	Middleware order — Make sure the route is registered before any catch-all 404 middleware (e.g. app.use((req, res) => res.status(404).send("Not found"))). If the catch-all is defined first, it intercepts the request before Express ever reaches the PATCH route.​​​​​​​​​​​​​​​​
+1. First, I wouls make sure the server actually has a PATCH route defined for /api/bookmarks/:id. If the route doesn’t exist or is typed incorrectly (e.g. /api/bookmark/:id without the “s”), Express won’t match it and will return a 404.
+2. Then, if a separate router file handles bookmark routes, I would check that it’s mounted correctly in the main server file (e.g. app.use("/api/bookmarks", bookmarkRouter)). A mismatch between the mount path and the route definition would cause Express to never find the route.
+3.	Finally, I would make sure that the route is registered before any catch-all 404 middleware (e.g. app.use((req, res) => res.status(404).send("Not found"))). If the catch-all is defined first, it intercepts the request before Express ever reaches the PATCH route.​​​​​​​​​​​​​​​​
